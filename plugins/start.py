@@ -66,6 +66,22 @@ The bot will process your video and send it back!</blockquote>
 <i>Tip: Use /queue to check progress.</i>
 """
 
+FEATURES_TEXT = """
+<b>🚀 Argons Encoder: The Ultimate Video Automation Bot</b>
+
+<blockquote>Transform your Telegram workflow with professional-grade encoding! 🎬
+
+<b>✨ Key Features:</b>
+
+• <b>Smart Queue:</b> Auto-resume & persistence ⚡
+• <b>Pro Quality:</b> FFmpeg power with custom presets 🎞️
+• <b>Total Control:</b> Watermarks, metadata & admin panel 🛡️
+
+<i>Fast, stable, and fully customizable.</i> 🌟
+
+Developed by @REACTIVEARGON</blockquote>
+"""
+
 
 @Client.on_message(filters.command("start"))
 @task
@@ -138,6 +154,14 @@ async def stats_command(client, message):
     )
 
     await message.reply_text(text=stats_text, reply_markup=buttons)
+
+
+@Client.on_message(filters.command("features"))
+async def features_command(client, message):
+    buttons = InlineKeyboardMarkup(
+        [[InlineKeyboardButton("❌ Close", callback_data="cb_close")]]
+    )
+    await message.reply_text(text=FEATURES_TEXT, reply_markup=buttons)
 
 
 @Client.on_callback_query(filters.regex("^cb_"))
