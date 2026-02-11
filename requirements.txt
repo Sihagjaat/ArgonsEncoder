@@ -11,4 +11,5 @@ Werkzeug==2.2.2
 pytz
 uvloop
 psutil
+setuptools
 
