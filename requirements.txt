@@ -6,7 +6,8 @@ asyncio
 python-dotenv
 aiohttp
 Flask==2.2.2
-gunicorn==20.1.0
+gunicorn==21.2.0
+setuptools
 Werkzeug==2.2.2
 pytz
 uvloop
